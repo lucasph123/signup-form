@@ -6,6 +6,7 @@
     <link rel='stylesheet' href='style.css'/>
     <script src="scripts.js" defer></script>
     <title>Sign-Up Form</title>
+    <script></script>
 </head>
 <body>
 
@@ -29,55 +30,64 @@
         <div class="form-container">
             <form class="form">
                 <h1>Let's do This!</h1>
-                <div class="form-row">
+               
                     <div class="input">
                         <label for="name">
-                            First Name
+                            First Name *
                         </label>
-                        <input type="text" id="name">
+                        <input type="text" pattern="[a-zA-Z]+" placeholder="First Name" id="name" required>
+                        <span class="required"></span>
                     </div>
                     <div class="input">
                         <label for="surname">
-                            Last Name
+                            Last Name *
                         </label>
-                        <input type="text" id="surname">
+                        <input type="text" pattern="[a-zA-Z]+" placeholder="Last Name" id="surname" required>
+                        <span class="required"></span>
                     </div>
-                </div>
-                <div class="form-row">
+                
+              
                     <div class="input">
                         <label for="email">
-                            Email
+                            Email *
                         </label>
-                        <input type="email" id="email">
+                        <input type="email" id="email" placeholder="Email@email" required>
+                        <span class="required"></span>
                     </div>
                     <div class="input">
                         <label for="phone">
-                            Phone Number
+                            Phone Number *
                         </label>
-                        <input type="tel" id="phone">
+                        <input type="tel" placeholder="(xx) xxxx-xxxx" minlength='8' maxlength="8" pattern="[0-9]+" id="phone" required>
+                        <span class="required"></span>
                     </div>
-                </div>
-                <div class="form-row">
+                
+              
                     <div class="input">
                         <label for="password1">
-                            Password
+                            Password *
                         </label>
-                        <input type="password" id="password1">
-                    </div>
-                    <div class="input">
+                        <input placeholder="Password Min:8 Characters" type="password" id="password1"  class="password2"
+                        required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                        <span class="required"></span>
+                    </div>        
+
+                    <div   class="input">
                         <label for="password2">
-                            Confirm Password
+                            Confirm Password *
                         </label>
-                        <input type="password" id="password2">
+                        <input minlength='6' placeholder="Confirm password" type="password" id="password2" 
+                        required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" onkeyup="test()" class="password2">
+                        <span class="required"></span>
                     </div>
-                </div>
-                
+            </div>
+        <div class="footer-right">
+                    <button class='btn'type="submit">Create Account</button>
+
+                    <p class="login-container">
+                        Already have an account? <a class="login">Log In</a>
+                    </p>
             </form>
-        </div>
-
-        <div class="login-container">
-            Already have an account? <a class="login">Log In</a>
-
         </div>
     </div>
 </body>
